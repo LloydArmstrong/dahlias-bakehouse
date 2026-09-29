@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "allergens/index.html"
+        ],
+        "createdAt": "2026-09-29T14:44:32.550Z",
+        "reason": "brief-pinned: README.md (the user's brand spec) sets --color-cream-bg #FAF6F0 as the primary background; DESIGN.md records it as the paper token"
+      }
+    ]
+  }
+}

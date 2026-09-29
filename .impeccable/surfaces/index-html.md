@@ -11,7 +11,7 @@ related_targets: []
 
 - **Audience and job:** locals, custom-cake clients and gift buyers, mostly arriving by phone from Instagram. They need to see what Dahlia bakes, whether the Shed is open today, and how to reach her.
 - **Action:** get in touch. Instagram DM and email are primary, phone is secondary. Each bake, and the cake of the week, has a pre-filled "Ask about" email link. There are no forms and no ordering. The custom-cakes section was removed at the user's request on 2026-09-29.
-- **Proof:** the bakes and Dahlia herself. There are no photos, menu, prices, hours, address or story yet, so these ship as marked placeholders. Sample menu entries are labelled as samples, and placeholder facts carry a wavy proof-mark underline.
+- **Proof:** the bakes and Zaarah, the baker. There are no photos, menu, prices, hours, address or story yet, so these ship as marked placeholders. Sample menu entries are labelled as samples, and placeholder facts carry a wavy proof-mark underline.
 - **Section order:** Cover, then Cake of the week (a sage band with one large rose seed packet labelled "Packed for the week of …", filled in by JS), then Catalogue (the menu, with a category filter), Meet Dahlia, Instagram, and a Back cover holding Find us, hours, contact and the footer.
 - **Memorable moment:** the cover dahlia opens ring by ring, and the cover states whether the Shed is open right now.
 - **Confirmed facts:** open every Friday at 131 Dee Rd, Reading RG30 4JQ. The address is shown large on the cover card and at display size in Find the Shed, and JS states the next Friday. Dahlia's photo fills Meet Dahlia as a chocolate duotone on a pink plate with a pinked seal.

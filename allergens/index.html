@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Allergens · Dahlia’s Bakehouse</title>
+  <meta name="description" content="This week’s bakes at Dahlia’s Bakehouse and the allergens each one contains. Updated every week.">
+  <meta name="theme-color" content="#E8A598">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&family=Young+Serif&display=swap">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<!--
+  HOW TO UPDATE THIS PAGE EACH WEEK
+
+  The printed QR code points at this page's address (…/allergens/), which never changes,
+  so the same QR code keeps working. Only edit the content below; don't rename or move this file.
+
+  1. Change the date in the "a-updated" line (both the datetime="YYYY-MM-DD" and the words).
+  2. Update the list of bakes. Each bake is one <li class="a-bake"> … </li> block:
+       - copy a block to add a bake, delete a block to remove one;
+       - "Contains" chips go in the first list, "May contain" chips in the second;
+       - if a bake has no "may contain" warnings, delete that <dt> and <dd> pair;
+       - if a bake contains none of the 14 allergens, replace the first chip list with:
+           <p class="a-none">None of the 14 allergens</p>
+       - data-cat sets the colour of the number badge: week, cakes, pastries, cupcakes or seasonal.
+  3. Use the allergen names from the list of 14 at the bottom of the page, so every week reads the same.
+  4. Delete the "a-sample" warning once the real list is in.
+
+  QR code files: qr/allergens.svg (for print) and qr/allergens.png, in the project's top folder.
+  They encode: https://lloydarmstrong.github.io/dahlias-bakehouse/allergens/
+  If the site ends up at a different address, regenerate them once before printing (run from the top folder):
+    npx qrcode@1.5.4 -t svg -e M -q 4 -d 3D2314 -l FFFFFF -o qr/allergens.svg "https://YOUR-ADDRESS/allergens/"
+    npx qrcode@1.5.4 -t png -e M -q 4 -w 1200 -d 3D2314 -l FFFFFF -o qr/allergens.png "https://YOUR-ADDRESS/allergens/"
+-->
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="../">Dahlia’s Bakehouse</a>
+  <a class="btn btn-sm" href="../#contact">Get in touch</a>
+</header>
+
+<main id="main">
+
+  <section class="a-head" aria-labelledby="a-title">
+    <div class="wrap">
+      <h1 id="a-title">Allergens</h1>
+      <p class="a-updated">Bakes for <time class="tbc" datetime="2026-10-02">Friday 2 October 2026</time></p>
+      <p class="a-intro">Every bake on the counter this Friday, and the allergens each one contains. This page is updated every week, so it always shows the current bakes.</p>
+      <div class="a-warning">
+        <p><strong>Please tell Zaarah about any allergy before you buy.</strong> <span class="tbc">Everything is baked in one small kitchen that also handles nuts, gluten, milk, eggs and sesame</span>, so no bake can be guaranteed free from every allergen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-list" aria-label="This week’s bakes">
+    <div class="wrap">
+      <p class="a-sample">Sample list: these bakes and allergens are examples only, not real information. Zaarah will publish the real list here.</p>
+
+      <ol class="a-bakes">
+        <li class="a-bake" data-cat="week">
+          <h2><span class="a-no">Cake of the week</span> Brown Butter Honey Cake</h2>
+          <dl>
+            <dt>Contains</dt>
+            <dd><ul class="a-chips"><li>Gluten (wheat)</li><li>Eggs</li><li>Milk</li></ul></dd>
+            <dt class="a-may-label">May contain</dt>
+            <dd><ul class="a-chips a-may"><li>Tree nuts</li><li>Peanuts</li></ul></dd>
+          </dl>
+        </li>
+        <li class="a-bake" data-cat="cakes">
+          <h2><span class="a-no">No. 03</span> Dahlia Layer Cake</h2>
+          <dl>
+            <dt>Contains</dt>
+            <dd><ul class="a-chips"><li>Gluten (wheat)</li><li>Eggs</li><li>Milk</li></ul></dd>
+            <dt class="a-may-label">May contain</dt>
+            <dd><ul class="a-chips a-may"><li>Tree nuts</li></ul></dd>
+          </dl>
+        </li>
+        <li class="a-bake" data-cat="cakes">
+          <h2><span class="a-no">No. 04</span> Chocolate Celebration Cake</h2>
+          <dl>
+            <dt>Contains</dt>
+            <dd><ul class="a-chips"><li>Gluten (wheat)</li><li>Eggs</li><li>Milk</li><li>Soya</li></ul></dd>
+            <dt class="a-may-label">May contain</dt>
+            <dd><ul class="a-chips a-may"><li>Tree nuts</li></ul></dd>
+          </dl>
+        </li>
+        <li class="a-bake" data-cat="pastries">
+          <h2><span class="a-no">No. 05</span> Cardamom Morning Bun</h2>
+          <dl>
+            <dt>Contains</dt>
+            <dd><ul class="a-chips"><li>Gluten (wheat)</li><li>Eggs</li><li>Milk</li></ul></dd>
+            <dt class="a-may-label">May contain</dt>
+            <dd><ul class="a-chips a-may"><li>Sesame</li><li>Tree nuts</li></ul></dd>
+          </dl>
+        </li>
+        <li class="a-bake" data-cat="pastries">
+          <h2><span class="a-no">No. 06</span> Almond Croissant</h2>
+          <dl>
+            <dt>Contains</dt>
+            <dd><ul class="a-chips"><li>Gluten (wheat)</li><li>Eggs</li><li>Milk</li><li>Tree nuts (almonds)</li></ul></dd>
+            <dt class="a-may-label">May contain</dt>
+            <dd><ul class="a-chips a-may"><li>Peanuts</li></ul></dd>
+          </dl>
+        </li>
+        <li class="a-bake" data-cat="cupcakes">
+          <h2><span class="a-no">No. 07</span> Strawberry Shortcake Cupcake</h2>
+          <dl>
+            <dt>Contains</dt>
+            <dd><ul class="a-chips"><li>Gluten (wheat)</li><li>Eggs</li><li>Milk</li></ul></dd>
+          </dl>
+        </li>
+      </ol>
+
+      <details class="a-key">
+        <summary>The 14 allergens we check for</summary>
+        <ul>
+          <li>Celery</li>
+          <li>Cereals containing gluten (wheat, rye, barley, oats)</li>
+          <li>Crustaceans</li>
+          <li>Eggs</li>
+          <li>Fish</li>
+          <li>Lupin</li>
+          <li>Milk</li>
+          <li>Molluscs</li>
+          <li>Mustard</li>
+          <li>Peanuts</li>
+          <li>Sesame</li>
+          <li>Soya</li>
+          <li>Sulphur dioxide and sulphites</li>
+          <li>Tree nuts (almonds, hazelnuts, walnuts, cashews, pecans, Brazil nuts, pistachios, macadamias)</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="a-foot">
+  <div class="wrap">
+    <p class="a-foot-address">131 Dee Rd, Reading RG30 4JQ<br>Open every Friday</p>
+    <div class="actions">
+      <a class="btn" href="../#contact">Get in touch</a>
+      <a href="../">Back to Dahlia’s Bakehouse</a>
+    </div>
+    <p class="legend"><span class="tbc">Wavy-underlined</span> details are placeholders until the real ones arrive.</p>
+  </div>
+</footer>
+</body>
+</html>

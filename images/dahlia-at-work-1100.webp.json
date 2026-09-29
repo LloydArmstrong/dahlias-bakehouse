@@ -1,4 +1,4 @@
 {
-  "prompt": "Origin: sourced, not generated. Photograph of Dahlia icing a cake, supplied by the site owner (Lloyd Armstrong) on 2026-09-29 as a 1365x2048 JPEG.\nTreatment: cropped to 1100x1375 at +90+470 (4:5), converted to grayscale, sigmoidal-contrast 3,50%, then mapped through a two-ink duotone (chocolate #3D2314 to paper #FAF6F0) with ImageMagick -clut, resized, and encoded as WebP q78 with cwebp.\n",
+  "prompt": "Origin: sourced, not generated. Photograph of Zaarah (owner and baker of Dahlia's Bakehouse) icing a cake, supplied by the site owner (Lloyd Armstrong) on 2026-09-29 as a 1365x2048 JPEG.\nTreatment: cropped to 1100x1375 at +90+470 (4:5), converted to grayscale, sigmoidal-contrast 3,50%, then mapped through a two-ink duotone (chocolate #3D2314 to paper #FAF6F0) with ImageMagick -clut, resized, and encoded as WebP q78 with cwebp.\n",
   "createdAt": "2026-09-29T12:26:59.463Z"
 }

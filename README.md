@@ -70,13 +70,13 @@ E. Brand Story / Meet the Baker
 
 F. Instagram Live Feed / Social Gallery
 
-⚬ Dynamic grid displaying recent Instagram posts (linking to @dahliasbakeshouse).
+⚬ Dynamic grid displaying recent Instagram posts (linking to @dahliasbakehouse).
 ⚬ Section Header: Fresh from the Shed — Follow us on Instagram.
 
 G. Footer
 
 ⚬ Operating hours & pickup location/address.
-⚬ Social links (Instagram: @dahliasbakeshouse).
+⚬ Social links (Instagram: @dahliasbakehouse).
 ⚬ Copyright and newsletter subscription for seasonal drop alerts.
 
 4. UI/UX & Styling Guidelines for Design Agents

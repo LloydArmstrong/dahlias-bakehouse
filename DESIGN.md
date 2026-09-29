@@ -214,6 +214,22 @@ The seed packet is the catalogue's unit. The white sheet has a 16px radius and a
 ### Dahlia Print (signature)
 The dahlia print is an inline SVG symbol with rings of petals filled from `--d1`/`--d2` (alternating) and a `--d3` centre, stroked in chocolate at 1.1–1.4 with a non-scaling stroke and round joins. The recolouring must always come from the palette inks. The cover bloom is the largest print, bleeding off the right edge with sage leaves, and it opens ring by ring on load (1.8s ease-out, staggered 0.11s per ring).
 
+### Find the Shed Tag
+A standalone directions button under the back-cover address, shaped like a stub torn off a seed packet.
+- **Stub:** a rose stub (`clamp(4.75rem, 7vw, 5.5rem)` square) holding a paper map-pin icon (a 24-unit authored SVG with a 1.8 stroke), separated from the label by a 1.5px dashed paper tear line.
+- **Label and edge:** a pink label with a Young Serif "Find the Shed" (up to 2.1rem) over a soft-chocolate "Directions in Google Maps" line. The left edge is pinked with the packet crimp mask, turned onto its side.
+- **Hover:** the label turns paper. When motion is allowed, the tag lifts and tilts -1.2deg and the pin rises 3px.
+- **Focus and link:** the focus ring sits on the outer link, so the mask never clips it. The link opens Google Maps directions (`maps/dir/?api=1&destination=`).
+
+### Allergen Card (allergens page)
+The allergens page is a quiet, operational surface: a pink head band, then cards in a paper list, then a chocolate footer.
+- **Card:** each bake is a white card (16px radius, the README card shadow) with a Young Serif name. A small uppercase number pill sits in the category's field ink: `week` is rose, and cakes, pastries, cupcakes and seasonal use the catalogue inks.
+- **Allergen rows:** a dashed taupe rule, then a `dl` whose tracked labels read "Contains" (chocolate) and "May contain" (taupe).
+- **Chips:** "Contains" chips are solid chocolate pills with paper text. "May contain" chips are the same pill in outline with a **dashed** border, because a dash means uncertainty in this system, just as it marks the glue fold and the empty state.
+- **"None" state:** a line of sage-ink text reading "None of the 14 allergens".
+- **Reference and sample notice:** the list of 14 sits in a native `<details>` with rose markers. A dashed rose notice marks sample data.
+- **Print:** the print stylesheet removes the chrome and gives the cards thin chocolate borders.
+
 ### Placeholder Proof Mark
 Any fact that has not been supplied yet (hours, contact, address, handle, story) carries a 1px wavy rose underline, offset 0.3em. On chocolate grounds the underline is pink. A footer legend explains the mark.
 

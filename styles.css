@@ -257,6 +257,8 @@ a:hover { text-decoration-thickness: 2px; }
 .section-head { max-width: 44rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
 .section-head > p { margin-top: 1rem; max-width: 60ch; }
 .sample-note { color: var(--rose); font-size: 0.92rem; font-weight: 500; }
+.section-head > .allergen-link { margin-top: 0.5rem; font-size: 0.95rem; font-weight: 600; }
+.allergen-link a { color: var(--choc); }
 
 /* ---------- Catalogue ---------- */
 
@@ -288,9 +290,9 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Each category prints in its own ink; the season takes the deepest. */
 .packet { --field: var(--pink); --ink: var(--choc); --d1: var(--rose); --d2: var(--paper); --d3: var(--sage); }
-.packet[data-cat="pastries"] { --field: var(--sage); --d1: var(--paper); --d2: var(--pink); --d3: var(--choc); }
-.packet[data-cat="cupcakes"] { --field: var(--choc); --ink: var(--paper); --d1: var(--pink); --d2: var(--paper); --d3: var(--rose); }
-.packet[data-cat="seasonal"] { --field: var(--rose); --ink: var(--paper); --d1: var(--pink); --d2: var(--paper); --d3: var(--sage); }
+:is(.packet, .a-bake)[data-cat="pastries"] { --field: var(--sage); --d1: var(--paper); --d2: var(--pink); --d3: var(--choc); }
+:is(.packet, .a-bake)[data-cat="cupcakes"] { --field: var(--choc); --ink: var(--paper); --d1: var(--pink); --d2: var(--paper); --d3: var(--rose); }
+:is(.packet, .a-bake)[data-cat="seasonal"] { --field: var(--rose); --ink: var(--paper); --d1: var(--pink); --d2: var(--paper); --d3: var(--sage); }
 .packet[data-cat="cakes"]:nth-child(even) { --d1: var(--paper); --d2: var(--rose); --d3: var(--choc); }
 .packet[data-cat="pastries"]:nth-child(even) { --d1: var(--choc); --d2: var(--paper); --d3: var(--pink); }
 .packet[data-cat="cupcakes"]:nth-child(even) { --d1: var(--sage); --d2: var(--pink); --d3: var(--paper); }
@@ -456,7 +458,7 @@ a:hover { text-decoration-thickness: 2px; }
   .cotw-sheet .art { width: 64%; }
 }
 
-/* ---------- Meet Dahlia ---------- */
+/* ---------- Meet Zaarah ---------- */
 
 .baker { padding: var(--section) 0; }
 .baker-grid {
@@ -551,8 +553,55 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .address-big a { text-decoration-thickness: 2px; text-underline-offset: 0.12em; }
 .address-big a:hover { text-decoration-thickness: 4px; }
-.backcover .btn { margin: 1.75rem 0 clamp(3rem, 6vw, 4.5rem); background: var(--pink); border-color: var(--pink); color: var(--choc); }
-.backcover .btn:hover { background: var(--paper); border-color: var(--paper); }
+
+/* Find the Shed: a stub torn off a seed packet. Rose stub with a pin, pink label, pinked left edge. */
+.shed-tag {
+  display: flex;
+  width: fit-content;
+  margin: 1.75rem 0 clamp(3rem, 6vw, 4.5rem);
+  border-radius: var(--radius-card);
+  color: var(--choc);
+  text-decoration: none;
+  transition: transform 0.5s var(--ease-out);
+}
+.shed-tag-sheet {
+  --crimp: 6px;
+  display: flex;
+  min-height: clamp(4.75rem, 7vw, 5.5rem);
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--pink);
+  mask:
+    radial-gradient(var(--crimp) at 0 50%, #0000 96%, #000) 0 50% / calc(var(--crimp) * 1.5) calc(var(--crimp) * 2.5) repeat-y,
+    linear-gradient(#000 0 0) calc(var(--crimp) * 1.5) 0 / 100% 100% no-repeat;
+}
+.shed-tag-stub {
+  display: grid;
+  place-items: center;
+  width: clamp(4.75rem, 7vw, 5.5rem);
+  padding-left: 0.4rem;
+  background: var(--rose);
+  border-right: 1.5px dashed var(--paper); /* the tear line */
+}
+.shed-tag-stub svg {
+  width: 1.9rem; height: 1.9rem;
+  fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linejoin: round;
+  transition: transform 0.5s var(--ease-out);
+}
+.shed-tag-text {
+  display: grid;
+  align-content: center;
+  gap: 0.2rem;
+  padding: 0.85rem 1.75rem 0.9rem 1.25rem;
+  transition: background-color 0.35s var(--ease-out);
+}
+.shed-tag-label { font: 400 clamp(1.4rem, 2.6vw, 2.1rem)/1.05 var(--font-display); }
+.shed-tag-sub { font-size: clamp(0.85rem, 1.2vw, 0.95rem); font-weight: 600; color: var(--choc-soft); }
+.shed-tag:hover .shed-tag-text { background: var(--paper); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .shed-tag:hover { transform: translateY(-3px) rotate(-1.2deg); }
+  .shed-tag:hover .shed-tag-stub svg { transform: translateY(-3px); }
+}
 .backcover-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -609,3 +658,111 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Filter reflow: packets glide to their new places. */
 ::view-transition-group(*) { animation-duration: 0.5s; animation-timing-function: var(--ease-out); }
+
+/* ---------- Allergens page (allergens/index.html) ---------- */
+
+.a-head { padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem); background: var(--pink); }
+.a-head h1 { font-size: clamp(3rem, 9vw, 5.5rem); line-height: 0.95; letter-spacing: -0.02em; }
+.a-updated { margin-top: 1.1rem; font: 400 clamp(1.15rem, 2.4vw, 1.4rem)/1.3 var(--font-display); }
+.a-intro { margin-top: 0.6rem; max-width: 52ch; color: var(--choc-soft); }
+.a-warning {
+  margin-top: 1.75rem;
+  max-width: 46rem;
+  padding: 1.1rem 1.35rem;
+  border: 1.5px solid var(--choc);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+}
+.a-warning strong { font-weight: 700; }
+
+.a-list { padding: clamp(2.5rem, 6vw, 4.5rem) 0 var(--section); }
+.a-sample {
+  margin-bottom: 1.5rem;
+  max-width: 46rem;
+  padding: 0.8rem 1.1rem;
+  border: 1.5px dashed var(--rose);
+  border-radius: var(--radius-card);
+  color: var(--rose);
+  font-weight: 600;
+}
+.a-bakes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
+  gap: 1.25rem;
+  margin: 0; padding: 0; list-style: none;
+}
+.a-bake {
+  --field: var(--pink); --ink: var(--choc);
+  padding: 1.25rem 1.35rem 1.4rem;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.a-bake[data-cat="week"] { --field: var(--rose); --ink: var(--paper); }
+.a-bake h2 { font-size: 1.45rem; line-height: 1.15; letter-spacing: 0; }
+.a-no {
+  display: inline-block;
+  margin: 0 0.5rem 0.4rem 0;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  color: var(--ink);
+  font: 600 0.72rem/1.2 var(--font-text);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  vertical-align: 0.3em;
+}
+.a-bake dl {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--taupe);
+}
+.a-bake dt {
+  padding-top: 0.4rem;
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.a-bake dt.a-may-label { color: var(--taupe); }
+.a-bake dd { margin: 0; }
+.a-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.a-chips li {
+  padding: 0.3rem 0.75rem;
+  border: 1.5px solid var(--choc);
+  border-radius: var(--radius-pill);
+  background: var(--choc);
+  color: var(--paper);
+  font-size: 0.92rem; font-weight: 600;
+}
+.a-chips.a-may li { background: transparent; color: var(--choc); border-style: dashed; } /* dashed = may contain */
+.a-none { padding-top: 0.3rem; color: var(--sage-ink); font-weight: 600; }
+
+.a-key { margin-top: 2.5rem; max-width: 46rem; }
+.a-key summary {
+  cursor: pointer;
+  font: 400 1.3rem/1.3 var(--font-display);
+  text-underline-offset: 0.22em;
+}
+.a-key summary:hover { text-decoration: underline; }
+.a-key summary::marker { color: var(--rose); }
+.a-key ul { margin: 1rem 0 0; padding-left: 1.2rem; columns: 2 14rem; column-gap: 2rem; }
+.a-key li { padding: 0.15rem 0; break-inside: avoid; }
+.a-key li::marker { color: var(--rose); }
+
+.a-foot { --focus: var(--pink); padding: clamp(2.5rem, 6vw, 4rem) 0; background: var(--choc); color: var(--paper); }
+.a-foot .wrap { display: grid; gap: 1.25rem; }
+.a-foot-address { font: 400 clamp(1.5rem, 4vw, 2.25rem)/1.1 var(--font-display); }
+.a-foot .actions a:not(.btn) { align-self: center; color: var(--pink); font-weight: 600; }
+.a-foot .btn { background: var(--pink); border-color: var(--pink); color: var(--choc); }
+.a-foot .btn:hover { background: var(--paper); border-color: var(--paper); }
+.a-foot .tbc { text-decoration-color: var(--pink); }
+.a-foot .legend { color: var(--sage); font-size: 0.9rem; }
+.a-foot ::selection { background: var(--pink); color: var(--choc); }
+
+@media print {
+  .masthead, .skip, .a-foot .actions { display: none; }
+  .a-head, .a-list { padding: 1rem 0; background: none; }
+  .a-bake { box-shadow: none; border: 1px solid var(--choc); break-inside: avoid; }
+}

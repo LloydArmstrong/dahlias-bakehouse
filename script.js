@@ -12,7 +12,7 @@ document.querySelectorAll('[data-week]').forEach((el) => {
 });
 
 // ---- When the Shed next opens: one day a week, set by data-open-day (0 = Sunday) ----
-// ponytail: whole-day status on the visitor's clock; add opening times here once Dahlia confirms them.
+// ponytail: whole-day status on the visitor's clock; add opening times here once Zaarah confirms them.
 const openDayEl = document.querySelector('[data-open-day]');
 if (openDayEl) {
   const now = new Date();
